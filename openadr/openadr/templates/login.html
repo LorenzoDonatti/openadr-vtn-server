@@ -7,15 +7,14 @@
         <meta http-equiv="refresh" content="0; {% url 'vtn:home' %}" />
     {% else %}
         <center>
-        <h2>Please Enter Your Credentials</h2>
+        <h2>Por favor digite suas credenciais</h2>
             <br>
-            <form method="post">
-                {% csrf_token %}
+            <form method="post">{% csrf_token %}
                 {{ form.as_p }}
                 <button name="login" style="width:5cm" class="btn btn-primary" type="submit"><big><big>Login</big></big></button>
             </form>
             <br>
-{#        <a href="{% url 'vtn:signup' %}"><button style="width:5cm" class="btn btn-primary" type="submit"><big><big>Sign up</big></big></button></a>#}
+{#        <a href="{% url 'vtn:signup' %}"><button style="width:5cm" class="btn btn-primary" type="submit"><big><big>Criar conta</big></big></button></a>#}
         </center>
     {% endif %}
     {% endblock %}
