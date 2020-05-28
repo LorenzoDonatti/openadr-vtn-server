@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
-<meta http-equiv="Content-Language" content="en_US">
+<html lang="pt" xml:lang="pt" xmlns= "http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Language" content="pt_BR">
 <head>
 <meta charset="utf-8">
 {% load static %}
@@ -56,10 +56,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'vtn:home' %}">Overview</a>
+        <a class="nav-link" href="{% url 'vtn:home' %}">Visão Geral</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'vtn:report' %}">Report</a>
+        <a class="nav-link" href="{% url 'vtn:report' %}">Relatório</a>
       </li>
         <li class="nav-item last">
             {% if request.user.is_superuser %}
@@ -71,12 +71,12 @@
     </ul>
   <span class="nav-item dropdown">
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome {{ user.username }} </a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bem Vindo {{ user.username }} </a>
             <ul class="dropdown-menu">
                 {% if user.has_usable_password %}
-                    <li><a href="{% url 'vtn:change_password' %}">Change password </a></li>
+                    <li><a href="{% url 'vtn:change_password' %}">Alterar senha </a></li>
                 {% endif %}
-            <li> <a href="{% url 'vtn:logout' %}">Logoff</a></li>
+            <li> <a href="{% url 'vtn:logout' %}">Deslogar</a></li>
             </ul>
         </span>
   </div>
