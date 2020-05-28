@@ -2,7 +2,7 @@
 {{ form.media }}
 {% block title %}
     <div class="col-2">
-        <h1 class="title">Add DR Event </h1>
+        <h1 class="title">Adicionar Evento DR </h1>
     </div>
         {% endblock %}
 
@@ -12,7 +12,7 @@
 {% load admin_static %}
 {% load static %}
  {% block heading %}
-        Edit DR Event
+        Editar Evento DR
 {% endblock heading %}
 {% block content %}
 
@@ -43,10 +43,10 @@
       {% csrf_token %}
         <div class="row justify-content-around">
             <div class="col-md-4 col-md-offset-1">
-                <label for="{{ form.dr_program.id_for_label }}">DR Program </label>
+                <label for="{{ form.dr_program.id_for_label }}">Programa DR </label>
                 {{ form.dr_program }}
                 <br>
-                <span class="tip">First pick a program, and the 'Sites' will auto-populate </span><br> <br>
+                <span class="tip">Escolha um programa, e os locais irão se auto popular </span><br> <br>
                 <label for="{{ form.sites.id_for_label }}"> {{ form.sites.label }}</label>
             <div id="Sites">
                 {{ form.sites }}
@@ -54,20 +54,20 @@
             </div>
 
             <div class="col-md-4">
-                <label style="padding-left: 14%" class="right-column-label" for="{{ form.notification.id_for_label }}">Notification</label>
+                <label style="padding-left: 14%" class="right-column-label" for="{{ form.notification.id_for_label }}">Notificação</label>
                 {{ form.scheduled_notification_time }}
                 <br>
-                <label style="padding-left: 20%" for="{{form.start.id_for_label }}">Start </label>
+                <label style="padding-left: 20%" for="{{form.start.id_for_label }}">Inicio </label>
                 {{ form.start }}
                 <br>
-                <label style="padding-left: 21%" class="right-column-label" for="{{form.end.id_for_label }}">End </label>
+                <label style="padding-left: 21%" class="right-column-label" for="{{form.end.id_for_label }}">Fim </label>
                 {{ form.end }}
             </div>
         </div>
 
         <div class="row justify-content-center last-row" style="text-align:center">
             <div class="col-sm-4">
-                <button type="submit" name="Save" class="btn btn-lg btn-primary">Save</button>
+                <button type="submit" name="Save" class="btn btn-lg btn-primary">Salvar</button>
             </div>
         </div>
         {{ form.last_status_time }}
@@ -88,16 +88,16 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLiveLabel">Confirm</h5>
+        <h5 class="modal-title" id="exampleModalLiveLabel">Confirmar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         </button>
       </div>
       <div class="modal-body" style="font-size: 14px">
-        <p>Are you sure you want to cancel this event?</p>
+        <p>Realmente cancelar o evento?</p>
       </div>
       <div class="modal-footer" style="text-align: left">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href="{% url 'vtn:dr_event_delete' pk %}" class="btn btn-danger">Cancel</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a href="{% url 'vtn:dr_event_delete' pk %}" class="btn btn-danger">Cancelar</a>
 
       </div>
     </div>

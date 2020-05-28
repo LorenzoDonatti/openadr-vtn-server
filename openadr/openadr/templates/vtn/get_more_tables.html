@@ -6,6 +6,6 @@
          <td>{{ event.end }}</td>
          <td>{{ event.numSites }}</td>
          <td>{{event.status | capfirst }}</td>
-        <td> <a href="{% url 'vtn:export_dr_events_csv' event.pk %}">Export </a> </td>
+        <td> <a href="{% url 'vtn:export_dr_events_csv' event.pk %}">Exportar </a> </td>
     </tr>
 {% endfor %}

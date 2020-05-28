@@ -3,7 +3,7 @@
 {% load static %}
 {% block title %}
     <div class="col-2">
-        <h1 class="title">Overview </h1>
+        <h1 class="title">Visão Geral </h1>
     </div>
         {% endblock %}
 {% block content %}
@@ -20,7 +20,7 @@
 <div id="container2" class="container-fluid">
 <div class="row tableTitle justify-content-around" style="text-align: center">
     <div class="col-md-10 tableTitle">
-        <h2>Customers</h2>
+        <h2>Clientes</h2>
         <br>
     </div>
 </div>
@@ -31,11 +31,11 @@
             <table id="customerTable" class="table table-bordered table-striped table-hover table-condensed tablesorter">
                 <thead>
                 <tr>
-                    <th class="col-xs-3">Customer </th>
-                    <th class="col-xs-3">Utility ID </th>
-                    <th class="col-xs-3">Contact Name </th>
-                    <th class="col-sm-2">Phone Number</th>
-                    <th class="col-sm-2">Sites </th>
+                    <th class="col-xs-3">Cliente </th>
+                    <th class="col-xs-3"> ID </th>
+                    <th class="col-xs-3">Nome para contato </th>
+                    <th class="col-sm-2">Telefone</th>
+                    <th class="col-sm-2">Locais </th>
                     <th class="col-sm-2"> Online</th>
                     <th class="col-sm-2">Offline</th>
                 </tr>
@@ -57,19 +57,19 @@
             </div>
         </div>
         {% else %}
-        <h4> No customers </h4>
+        <h4> Sem Clientes </h4>
     {% endif %}
     </div>
 <br>
 <div class="row justify-content-center" style="text-align: center">
     <div class="col-sm-10">
-            <a href="{% url 'vtn:customer_add' %}" class="btn btn-lg btn-primary">Add Customer</a>
+            <a href="{% url 'vtn:customer_add' %}" class="btn btn-lg btn-primary">Adicionar Cliente</a>
     </div>
     </div>
 
 <div class="row tableTitle top-buffer justify-content-around">
     <div class="col-sm-10 tableTitle" style="text-align: center">
-        <h2>DR Events</h2>
+        <h2>Eventos DR</h2>
         <br>
     </div>
 </div>
@@ -81,11 +81,11 @@
                                     table-condensed tablesorter" width="100%">
                 <thead>
                 <tr>
-                    <th>Program </th>
-                    <th>Notification </th>
-                    <th> Start </th>
-                    <th>End </th>
-                    <th>Sites</th>
+                    <th>Programa </th>
+                    <th>Notificação </th>
+                    <th> Inicio </th>
+                    <th>Fim </th>
+                    <th>Locais</th>
                     <th>Status</th>
                 </tr>
                 </thead>
@@ -102,9 +102,9 @@
                     <td>{{ d.end }}</td>
                     <td>{{ d.numSites }}</td>
                     {% if d.deleted %}
-                    <td>Cancelled</td>
+                    <td>Cancelado</td>
                         {% elif d.status == 'far' or d.status == 'near' %}
-                        <td>Scheduled</td>
+                        <td>Agendado</td>
                     {% else %}
                     <td>{{ d.status | capfirst }}</td>
                     {% endif %}
@@ -115,13 +115,13 @@
         </div>
     </div>
     {% else %}
-    <h4>No events</h4>
+    <h4>Sem Eventos</h4>
     {% endif %}
     </div>
 <br>
 <div class="row justify-content-around" style="text-align: center">
     <div class="col-sm-6">
-            <a href="{% url 'vtn:dr_event' %}" class="btn btn-lg btn-primary">Add DR Event</a>
+            <a href="{% url 'vtn:dr_event' %}" class="btn btn-lg btn-primary">Adicionar Evento DR</a>
     </div>
     </div>
 </div>

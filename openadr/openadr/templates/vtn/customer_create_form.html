@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}
     <div class="col-2">
-        <h1 class="title">Add Customer </h1>
+        <h1 class="title">Adicionar Cliente </h1>
     </div>
         {% endblock %}
     {% load bootstrap4 %}
@@ -11,7 +11,7 @@
     {% load widget_tweaks %}
 
  {% block heading %}
-        Add Customer
+        Adicionar Cliente
     {% endblock heading %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/customer_create_form.css' %}">
 
@@ -51,7 +51,7 @@
                 </div>
             {% endfor %}
             <div class="form-group row justify-content-center" style="text-align:center">
-                <div class="col-sm-4"><button name="save" type="submit" class="btn btn-lg btn-primary">Save</button>
+                <div class="col-sm-4"><button name="save" type="submit" class="btn btn-lg btn-primary">Salvar</button>
                 </div>
             </div>
         </form>
