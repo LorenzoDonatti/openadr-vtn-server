@@ -5,7 +5,7 @@
 
 
  {% block heading %}
-        Customer: {{ customer.name }}
+        Cliente: {{ customer.name }}
     {% endblock heading %}
 {% block content %}
     <script src="{% static 'js/jquery.floatThead.min.js' %}"></script>
@@ -49,7 +49,7 @@
                                             <br>
                 {% endfor %}
                 <div class="form-group justify-content-center">
-                        <button name = "Save" type="submit" class="btn btn-lg edit-customer btn-primary">Save</button>
+                        <button name = "Save" type="submit" class="btn btn-lg edit-customer btn-primary">Salvar</button>
 
                 </div>
             </form>
@@ -57,24 +57,24 @@
     <div class="col-sm-6 box">
     {% if sites.count == 0 %}
     <div style="text-align: center">
-        <h4>No sites</h4>
+        <h4>Sem Locais</h4>
         <br>
         <br>
         <div style="text-align: center">
         <a href="{% url 'vtn:create_site' customer.pk %}" class="btn btn-primary btn-lg"
-                    role="button">Create New Site</a>
+                    role="button">Criar novo local</a>
         </div>
     </div>
     {% else %}
-        <h3> Sites</h3>
+        <h3> Locais</h3>
     <div class="wrapper">
         <table id="siteTable" class="table table-bordered table-striped table-hover table-sm">
           <thead>
             <tr>
-                  <th>Site</th>
+                  <th>Local</th>
                   <th>Status</th>
-                <th>Contact Name</th>
-                <th> Phone Number </th>
+                <th>Nome para contato</th>
+                <th> Telefone </th>
             </tr>
           </thead>
           <tbody>
@@ -96,7 +96,7 @@
         <br>
     <div style="text-align: center">
         <a href="{% url 'vtn:create_site' customer.pk %}" class="btn btn-primary btn-lg"
-                    role="button">Create New Site</a>
+                    role="button">Criar novo site</a>
         </div>
     {% endif %}
     </div>
@@ -109,12 +109,12 @@
 {#  <div class="modal-dialog" role="document">#}
 {#    <div class="modal-content">#}
 {#      <div class="modal-header">#}
-{#        <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Are you sure you want to delete {{ customer.name }}?</h5>#}
+{#        <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Tem certeza que deseja deletar {{ customer.name }}?</h5>#}
 {#      </div>#}
 {#      <div class="modal-body" style="text-align: center">#}
 {#          <form method="POST">#}
 {#              {% csrf_token %}#}
-{#                <button name='delete-customer' type="submit" class="btn btn-lg btn-danger">Delete</button>#}
+{#                <button name='delete-customer' type="submit" class="btn btn-lg btn-danger">Deletar</button>#}
 {#              <input type="hidden" name="pk" value="{{ customer.pk }}">#}
 {#              {{ form.customer| add_class:"form-control disabled hidden" }}#}
 {#          </form>#}

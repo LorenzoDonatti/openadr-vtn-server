@@ -4,7 +4,7 @@
 
  {% block heading %}
 
-     Event Detail: {{ event.dr_program }} <br>
+     Detalhes do evento: {{ event.dr_program }} <br>
 
     {% endblock heading %}
 
@@ -35,23 +35,23 @@
     <div class="col-sm-4">
         <nav class="nav nav-tabs nav-stacked" id="myTab" role="tablist">
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-               aria-controls="nav-home" aria-expanded="true">Graph</a>
+               aria-controls="nav-home" aria-expanded="true">Grafico</a>
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-sites_details" role="tab"
-               aria-controls="nav-profile">Site Details</a>
+               aria-controls="nav-profile">Detalhes do local</a>
         </nav>
     </div>
 <div class="col-4" style="text-align: center">
         <div id="event_details">
                 <div class="row justify-content-between">
-                    <div class="col-sm-2" style="font-weight: bold">Notification <br></div>
+                    <div class="col-sm-2" style="font-weight: bold">Notificação <br></div>
                     <div class="col-sm-5">{{ event.scheduled_notification_time }}</div>
                 </div>
                 <div class="row justify-content-between">
-                    <div class="col-sm-2" style="font-weight: bold">Start <br></div>
+                    <div class="col-sm-2" style="font-weight: bold">Inicio <br></div>
                     <div class="col-sm-5">{{ event.start }}</div>
                 </div>
                 <div class="row justify-content-between">
-                    <div class="col-sm-2" style="font-weight: bold">End <br></div>
+                    <div class="col-sm-2" style="font-weight: bold">Fim <br></div>
                     <div class="col-sm-5">{{ event.end }}</div>
                 </div>
                 <div class="row justify-content-between">
@@ -62,7 +62,7 @@
             </div>
     <br> <br>
                 <button type="button" id="cancel_event" class="btn btn-lg btn-danger" data-toggle="modal"
-                    data-target="#cancelModal">Cancel Event</button>
+                    data-target="#cancelModal">Cancelar Evento</button>
                     <br>
     <br>
 
@@ -74,11 +74,11 @@
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
          <div class="row justify-content-center">
              <div class="col-md-2">
-                <h3>Customer</h3>
+                <h3>Cliente</h3>
                         {{ customerForm.customer }}
              </div>
              <div class="col-md-2">
-                 <h3>Site</h3>
+                 <h3>Local</h3>
                         {{ siteForm.site }}
              </div>
         </div>
@@ -100,7 +100,7 @@
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 <center>
 
-    <h2> No data for event </h2>
+    <h2> Sem data de evento </h2>
 </center>
   </div>
 
@@ -113,11 +113,11 @@
          <table id="siteTable" class="table table-bordered table-striped table-hover table-condensed">
                 <thead>
                 <tr>
-                    <th class="col-sm-2">Site </th>
+                    <th class="col-sm-2">Local </th>
                     <th class="col-sm-2"> Notification Sent Time</th>
                     <th class="col-sm-2">Opt-in</th>
-                    <th class="col-sm-2">Last opt-in</th>
-                    <th class="col-sm-2">Most recent power (kw)</th>
+                    <th class="col-sm-2">Ultimo opt-in</th>
+                    <th class="col-sm-2">Potencia recente (kw)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -161,13 +161,13 @@
       </div>
       <div class="modal-body" style="font-size: 14px">
           <center>
-        <p>Are you sure you want to cancel this event? <br>
-        It is already in progress.</p>
+        <p>Tem certeza de que gostaria de deletar este evento? <br>
+        Em progresso.</p>
               </center>
       </div>
       <div class="modal-footer" style="text-align: center">
-        <button type="button" style="margin: 0 auto" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a style="margin: 0 auto" href="{% url 'vtn:dr_event_cancel' pk %}" class="btn btn-danger">Cancel</a>
+        <button type="button" style="margin: 0 auto" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a style="margin: 0 auto" href="{% url 'vtn:dr_event_cancel' pk %}" class="btn btn-danger">Cancelar</a>
 
       </div>
     </div>

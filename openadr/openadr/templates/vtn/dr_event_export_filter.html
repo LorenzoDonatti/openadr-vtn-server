@@ -6,11 +6,11 @@
 {% load timetags %}
 {% block title %}
     <div class="col-2">
-        <h1 class="title">Export DR Event Data </h1>
+        <h1 class="title">Exportar Dados do Evento DR</h1>
     </div>
 {% endblock %}
  {% block heading %}
-        Export Report Data
+        Exportar Dados do Evento DR
     {% endblock heading %}
 {% block content %}
 <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -31,19 +31,19 @@
         <!-- Filter form that user sees (i.e. is visible) -->
         <form method="POST" id="filterForm">
             {%csrf_token %}
-                Date Range:  <input type="text" name="datefilter" id="datefilter" value="" />
+                Alcance das Datas:  <input type="text" name="datefilter" id="datefilter" value="" />
                 {% for field in form %}
                     {% if field.name == 'dr_program' %}
-                        DR Program {{ field }}
+                        Programa DR {{ field }}
                     {% endif %}
                 {% endfor %}
                 <input type="hidden" id="exportInput" value="True">
-                <button type="submit" name="filter_button" class="btn btn-lg btnFilter btn-primary">Filter</button>
+                <button type="submit" name="filter_button" class="btn btn-lg btnFilter btn-primary">Filtro</button>
         </form>
 
 
         <!-- Clear filters form -->
-        <button type="button" class="btn btn-lg btn-primary btnFilter" id="clear_filters">Clear Filter(s) </button>
+        <button type="button" class="btn btn-lg btn-primary btnFilter" id="clear_filters">Limpar Filtro(s) </button>
 
 
     </center>
@@ -55,13 +55,13 @@
                 <table id="filterTable" class="table table-sm table-bordered table-striped table-hover tableSorter" width="100%">
                     <thead>
                          <tr>
-                            <th class="col-xs-3"> DR Program </th>
-                            <th class="col-xs-3"> Notification </th>
-                            <th class="col-xs-3"> Start </th>
-                            <th class="col-sm-2"> End </th>
-                            <th class="col-xs-3"> Sites </th>
-                            <th class="col-xs-3"> Event Status </th>
-                             <th class="col-xs-3"> Action </th>
+                            <th class="col-xs-3"> Programa DR </th>
+                            <th class="col-xs-3"> Notificação </th>
+                            <th class="col-xs-3"> Inicio </th>
+                            <th class="col-sm-2"> Fim </th>
+                            <th class="col-xs-3"> Locais </th>
+                            <th class="col-xs-3"> Status do Evento </th>
+                             <th class="col-xs-3"> Ação </th>
                          </tr>
                     </thead>
                     <tbody>
@@ -73,7 +73,7 @@
                              <td>{{ event.end }}</td>
                             <td>{{ event.numSites }}</td>
                              <td> {{ event.status | changeStatus | capfirst}}</td>
-                            <td> <a id="export_event" href="{% url 'vtn:export_dr_events_csv' event.pk %}">Export </a> </td>
+                            <td> <a id="export_event" href="{% url 'vtn:export_dr_events_csv' event.pk %}">Exportar </a> </td>
                         </tr>
                     {% endfor %}
                     </tbody>
@@ -82,7 +82,7 @@
         </div>
     </div>
     {% else %}
-    <h4> No events to export </h4>
+    <h4> Sem eventos para exportar </h4>
     {% endif %}
 </div> <!-- end DR Event container -->
 </div>
